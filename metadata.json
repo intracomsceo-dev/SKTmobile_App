@@ -1,0 +1,5 @@
+{
+  "name": "SKT 요금 계산기",
+  "description": "SKT 단말기 및 요금제 최적화 계산기",
+  "requestFramePermissions": []
+}

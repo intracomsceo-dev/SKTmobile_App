@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
+import { initializeFirestore, doc, getDocFromServer } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: "AIzaSyD4ru-Vz-Pil1loBuQqSnpLs4pkKvjAchY",
@@ -11,4 +11,23 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);
+export const db = initializeFirestore(app, {
+  experimentalForceLongPolling: true,
+});
+
+// Validate connection to Firestore on boot
+const testConnection = async () => {
+  try {
+    // Attempting to fetch a non-existent doc just to force a network trip
+    await getDocFromServer(doc(db, '_connection_test_', 'ping'));
+    console.log("Firestore connection successful.");
+  } catch (error) {
+    if (error instanceof Error && error.message.includes('unavailable')) {
+      console.warn("Firestore unavailable. Check your internet or Firebase console status.");
+    } else {
+      console.log("Firestore connection test completed (ignoring standard doc not found errors).");
+    }
+  }
+};
+
+testConnection();

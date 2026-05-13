@@ -13,12 +13,12 @@ const SECRET_PASSWORD = '6091';
 // [시스템 수정] ★ 분할된 이미지 주소를 여러 개 넣을 수 있는 배열 설정 ★
 // 작은따옴표('') 안에 주소를 넣고 쉼표(,)로 구분합니다.
 const SECRET_IMAGE_URLS = [
-  'https://i.imgur.com/rcjNK6B.png',
-  'https://i.imgur.com/U3ZJM3J.png',
-  'https://i.imgur.com/jIe6stC.png',
-  'https://i.imgur.com/NAziEBk.png',
-  'https://i.imgur.com/MKyP1i2.png',
-  'https://i.imgur.com/sOQjD8v.png'
+  'https://i.imgur.com/Xd6S81c.png',
+  'https://i.imgur.com/pvDI6ks.png',
+  'https://i.imgur.com/CyhBxuO.png',
+  'https://i.imgur.com/2RnRNM1.png',
+  'https://i.imgur.com/MHoGOem.png',
+  'https://i.imgur.com/C0SKVbH.png'
 ];
 
 // [시스템 수정] Tally 폼 주소 연결 (대표님이 만드신 주소 적용 완료)
